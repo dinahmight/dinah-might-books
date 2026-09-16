@@ -6,7 +6,7 @@ const names = [
   "Jehovah Jireh", "Jehovah Rapha", "Jehovah Shalom", "Jehovah Nissi",
   "Jehovah Rohi", "El Shaddai", "El Elyon", "El Olam",
   "Jehovah Tsuri", "Jehovah Hashopet", "El Deah", "Immanuel",
-  "El Chay", "El Hane'eman", "Jehovah Tsidkenu", "El Sabaoth",
+  "El Chay", "El Hane'eman", "Jehovah Tsidkenu", "Jehovah Sabaoth",
 ];
 
 export default function BookPage() {
