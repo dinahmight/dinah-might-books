@@ -19,8 +19,43 @@ export async function POST(request: Request) {
       );
     }
 
-    const kitResponse = await fetch(
-      `https://api.kit.com/v4/forms/${KIT_FORM_ID}/subscribers`,
+    // Step 1: create or update the subscriber (upsert by email).
+    const createResponse = await fetch("https://api.kit.com/v4/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Kit-Api-Key": apiKey,
+      },
+      body: JSON.stringify({
+        email_address: email,
+        first_name: name || undefined,
+        state: "active",
+      }),
+    });
+
+    if (!createResponse.ok) {
+      const errorBody = await createResponse.text();
+      console.error("Kit create-subscriber error:", createResponse.status, errorBody);
+      return NextResponse.json(
+        { error: "Something went wrong adding you to the list. Please try again." },
+        { status: 502 }
+      );
+    }
+
+    const createData = await createResponse.json();
+    const subscriberId = createData?.subscriber?.id;
+
+    if (!subscriberId) {
+      console.error("Kit create-subscriber response missing subscriber id:", createData);
+      return NextResponse.json(
+        { error: "Something went wrong adding you to the list. Please try again." },
+        { status: 502 }
+      );
+    }
+
+    // Step 2: attach the subscriber to the launch-list form.
+    const formResponse = await fetch(
+      `https://api.kit.com/v4/forms/${KIT_FORM_ID}/subscribers/${subscriberId}`,
       {
         method: "POST",
         headers: {
@@ -28,15 +63,14 @@ export async function POST(request: Request) {
           "X-Kit-Api-Key": apiKey,
         },
         body: JSON.stringify({
-          email_address: email,
-          first_name: name || undefined,
+          referrer: "https://dinahmightbooks.com/contact",
         }),
       }
     );
 
-    if (!kitResponse.ok) {
-      const errorBody = await kitResponse.text();
-      console.error("Kit API error:", kitResponse.status, errorBody);
+    if (!formResponse.ok) {
+      const errorBody = await formResponse.text();
+      console.error("Kit add-to-form error:", formResponse.status, errorBody);
       return NextResponse.json(
         { error: "Something went wrong adding you to the list. Please try again." },
         { status: 502 }
