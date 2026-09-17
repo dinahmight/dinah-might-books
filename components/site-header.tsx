@@ -16,9 +16,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#d4af5a]/20 bg-[#0b1220]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#b8862f]/25 bg-[#faf6ec]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-2xl tracking-wide text-[#f4ecd8]">
+        <Link href="/" className="font-display text-2xl tracking-wide text-[#17203a]">
           ROLL CALL<span className="text-gold">!</span>
         </Link>
         <nav className="hidden gap-8 md:flex">
@@ -26,14 +26,14 @@ export function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-body text-sm uppercase tracking-[0.15em] text-[#f4ecd8]/70 transition-colors hover:text-[#d4af5a]"
+              className="font-body text-sm uppercase tracking-[0.15em] text-[#17203a]/70 transition-colors hover:text-[#b8862f]"
             >
               {l.label}
             </Link>
           ))}
         </nav>
         <button
-          className="text-[#f4ecd8] md:hidden"
+          className="text-[#17203a] md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -41,13 +41,13 @@ export function SiteHeader() {
         </button>
       </div>
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-[#d4af5a]/20 bg-[#0b1220] px-6 py-4 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-[#b8862f]/25 bg-[#faf6ec] px-6 py-4 md:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="py-2 font-body text-sm uppercase tracking-[0.15em] text-[#f4ecd8]/80"
+              className="py-2 font-body text-sm uppercase tracking-[0.15em] text-[#17203a]/80"
             >
               {l.label}
             </Link>

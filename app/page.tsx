@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Heart, Users } from "lucide-react";
 export default function HomePage() {
   return (
     <main className="grain">
-      {/* Hero */}
+      {/* Hero — kept as a dark, image-driven band for legibility over the artwork */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -25,7 +25,7 @@ export default function HomePage() {
             className="animate-fade-up mt-6 max-w-2xl font-display text-6xl font-medium leading-[1.05] text-[#f4ecd8] md:text-7xl"
             style={{ animationDelay: "0.1s" }}
           >
-            ROLL CALL<span className="text-gold">!</span>
+            ROLL CALL<span className="text-[#d4af5a]">!</span>
           </h1>
           <p
             className="animate-fade-up mt-4 max-w-xl font-display text-2xl italic text-[#f4ecd8]/80"
@@ -62,7 +62,7 @@ export default function HomePage() {
       </section>
 
       {/* Snapshot stats */}
-      <section className="border-y border-[#d4af5a]/15 bg-[#0e1729] px-6 py-16">
+      <section className="border-y border-[#b8862f]/25 bg-[#f1e8d2] px-6 py-16">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
           {[
             { n: "31", label: "Days" },
@@ -71,7 +71,7 @@ export default function HomePage() {
           ].map((s) => (
             <div key={s.label}>
               <p className="font-display text-6xl text-gold">{s.n}</p>
-              <p className="mt-2 font-body text-sm uppercase tracking-[0.2em] text-[#f4ecd8]/60">
+              <p className="mt-2 font-body text-sm uppercase tracking-[0.2em] text-[#17203a]/60">
                 {s.label}
               </p>
             </div>
@@ -81,10 +81,10 @@ export default function HomePage() {
 
       {/* Who it's for */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <p className="font-body text-sm uppercase tracking-[0.3em] text-[#d4af5a]">
+        <p className="font-body text-sm uppercase tracking-[0.3em] text-[#b8862f]">
           Who This Book Is For
         </p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl text-[#f4ecd8] md:text-5xl">
+        <h2 className="mt-4 max-w-2xl font-display text-4xl text-[#17203a] md:text-5xl">
           Whether you&apos;ve known Him for decades, or you&apos;re just
           starting to listen.
         </h2>
@@ -108,13 +108,13 @@ export default function HomePage() {
           ].map((c) => (
             <div
               key={c.title}
-              className="border border-[#d4af5a]/20 bg-[#0e1729]/60 p-8 transition-colors hover:border-[#d4af5a]/50"
+              className="border border-[#b8862f]/25 bg-white/60 p-8 transition-colors hover:border-[#b8862f]/60"
             >
               <c.icon className="h-8 w-8 text-gold" />
-              <h3 className="mt-5 font-display text-2xl text-[#f4ecd8]">
+              <h3 className="mt-5 font-display text-2xl text-[#17203a]">
                 {c.title}
               </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-[#f4ecd8]/60">
+              <p className="mt-3 font-body text-sm leading-relaxed text-[#17203a]/65">
                 {c.body}
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mission strip */}
+      {/* Mission strip — kept as a dark, image-driven band for legibility over the photo */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image

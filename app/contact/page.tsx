@@ -23,7 +23,7 @@ export default function ContactPage() {
         body: JSON.stringify({
           email,
           name,
-          website, // honeypot value, should always be empty from real humans
+          website,
           renderedAt: renderedAt.current,
         }),
       });
@@ -46,26 +46,23 @@ export default function ContactPage() {
   return (
     <main className="grain mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-6 py-24 text-center">
       <Mail className="h-10 w-10 text-gold" />
-      <h1 className="mt-6 font-display text-4xl text-[#f4ecd8] md:text-5xl">
+      <h1 className="mt-6 font-display text-4xl text-[#17203a] md:text-5xl">
         Join the Launch List
       </h1>
-      <p className="mt-4 font-body text-[#f4ecd8]/70">
+      <p className="mt-4 font-body text-[#17203a]/70">
         Be the first to know when ROLL CALL! goes live on October 1, 2026 —
         plus early access to group-study guides and launch-week extras.
       </p>
 
       {status === "success" ? (
-        <div className="mt-10 flex items-center gap-3 border border-[#d4af5a]/40 bg-[#0e1729]/60 px-8 py-6">
+        <div className="mt-10 flex items-center gap-3 border border-[#b8862f]/40 bg-white/70 px-8 py-6">
           <CheckCircle2 className="h-6 w-6 shrink-0 text-gold" />
-          <p className="font-body text-sm text-[#f4ecd8]/80">
+          <p className="font-body text-sm text-[#17203a]/85">
             Thank you, {name || "friend"}! You&apos;re on the list.
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="mt-10 w-full space-y-4">
-          {/* Honeypot field: hidden from real visitors via CSS, but bots that
-              auto-fill every input will populate it. Never rendered visibly,
-              never focusable via keyboard tab order. */}
           <div
             aria-hidden="true"
             style={{
@@ -95,7 +92,7 @@ export default function ContactPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === "loading"}
-            className="w-full border border-[#d4af5a]/30 bg-transparent px-5 py-4 font-body text-[#f4ecd8] placeholder:text-[#f4ecd8]/40 focus:border-[#d4af5a] focus:outline-none disabled:opacity-50"
+            className="w-full border border-[#b8862f]/30 bg-white/40 px-5 py-4 font-body text-[#17203a] placeholder:text-[#17203a]/40 focus:border-[#b8862f] focus:outline-none disabled:opacity-50"
           />
           <input
             type="email"
@@ -104,10 +101,10 @@ export default function ContactPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
-            className="w-full border border-[#d4af5a]/30 bg-transparent px-5 py-4 font-body text-[#f4ecd8] placeholder:text-[#f4ecd8]/40 focus:border-[#d4af5a] focus:outline-none disabled:opacity-50"
+            className="w-full border border-[#b8862f]/30 bg-white/40 px-5 py-4 font-body text-[#17203a] placeholder:text-[#17203a]/40 focus:border-[#b8862f] focus:outline-none disabled:opacity-50"
           />
           {status === "error" && (
-            <div className="flex items-center gap-2 text-left font-body text-sm text-red-400">
+            <div className="flex items-center gap-2 text-left font-body text-sm text-red-600">
               <AlertCircle className="h-4 w-4 shrink-0" />
               {errorMessage}
             </div>
@@ -123,7 +120,7 @@ export default function ContactPage() {
         </form>
       )}
 
-      <p className="mt-8 font-body text-xs text-[#f4ecd8]/40">
+      <p className="mt-8 font-body text-xs text-[#17203a]/45">
         No spam &mdash; just launch news, group-study resources, and the
         occasional gratitude prompt.
       </p>

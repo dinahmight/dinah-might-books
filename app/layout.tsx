@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-[#0b1220] text-[#f4ecd8] font-body antialiased">
+      <body className="bg-[#faf6ec] text-[#17203a] font-body antialiased">
         <SiteHeader />
         {children}
         <SiteFooter />

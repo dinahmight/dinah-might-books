@@ -3,6 +3,7 @@ import Image from "next/image";
 export default function MinistryPage() {
   return (
     <main className="grain">
+      {/* Hero — kept as a dark, image-driven band for legibility over the photo */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -31,11 +32,11 @@ export default function MinistryPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <p className="font-display text-3xl italic leading-snug text-[#f4ecd8]">
+        <p className="font-display text-3xl italic leading-snug text-[#17203a]">
           &ldquo;No past mistake defines a person&apos;s worth or
           future.&rdquo;
         </p>
-        <p className="mt-8 font-body leading-relaxed text-[#f4ecd8]/70">
+        <p className="mt-8 font-body leading-relaxed text-[#17203a]/75">
           At the heart of our mission is a belief that no past mistake
           defines a person&apos;s worth or future. Through faith, community,
           and service, we walk alongside individuals on their journey
@@ -48,10 +49,10 @@ export default function MinistryPage() {
 
         <div className="my-14 gold-divider" />
 
-        <h2 className="font-display text-2xl text-[#f4ecd8]">
+        <h2 className="font-display text-2xl text-[#17203a]">
           How ROLL CALL! Connects
         </h2>
-        <p className="mt-5 font-body leading-relaxed text-[#f4ecd8]/70">
+        <p className="mt-5 font-body leading-relaxed text-[#17203a]/75">
           ROLL CALL! isn&apos;t just a devotional &mdash; it&apos;s an
           invitation to experience God up close and personal. Every
           proceed from the book funds the same restoration work Dinah and
@@ -64,7 +65,7 @@ export default function MinistryPage() {
           href="https://www.iknowaguyministries.org"
           target="_blank"
           rel="noreferrer"
-          className="mt-10 inline-flex items-center gap-2 border border-[#d4af5a]/40 px-8 py-4 font-body text-sm uppercase tracking-[0.15em] text-[#d4af5a] transition-colors hover:bg-[#d4af5a] hover:text-[#0b1220]"
+          className="mt-10 inline-flex items-center gap-2 border border-[#b8862f]/40 px-8 py-4 font-body text-sm uppercase tracking-[0.15em] text-[#b8862f] transition-colors hover:bg-[#b8862f] hover:text-white"
         >
           Visit I Know A Guy Ministries
         </a>
