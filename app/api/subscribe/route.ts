@@ -1,10 +1,22 @@
 import { NextResponse } from "next/server";
 
 const KIT_FORM_ID = 9928021; // "Charlotte form" in Kit
+const MIN_FILL_TIME_MS = 2000; // real humans take at least ~2s to fill the form
 
 export async function POST(request: Request) {
   try {
-    const { email, name } = await request.json();
+    const { email, name, website, renderedAt } = await request.json();
+
+    // Honeypot check: real visitors never see or fill this field.
+    if (website) {
+      // Pretend success so bots don't learn their submission was rejected.
+      return NextResponse.json({ success: true });
+    }
+
+    // Timing check: bots typically submit near-instantly after the page loads.
+    if (typeof renderedAt === "number" && Date.now() - renderedAt < MIN_FILL_TIME_MS) {
+      return NextResponse.json({ success: true });
+    }
 
     if (!email || typeof email !== "string") {
       return NextResponse.json({ error: "Email is required." }, { status: 400 });
