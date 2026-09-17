@@ -15,9 +15,9 @@ export default function HomePage() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220]/60 via-[#0b1220]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#0b1220]/70 via-[#0b1220]/35 to-transparent" />
         </div>
-        <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-6 py-24">
+        <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col items-end justify-center px-6 py-24 text-right">
           <p className="animate-fade-up font-body text-sm uppercase tracking-[0.3em] text-[#d4af5a]">
             Discover Who God Is, One Name at a Time
           </p>
@@ -42,7 +42,7 @@ export default function HomePage() {
             one name, one story, one gratitude prayer at a time.
           </p>
           <div
-            className="animate-fade-up mt-10 flex flex-wrap gap-4"
+            className="animate-fade-up mt-10 flex flex-wrap justify-end gap-4"
             style={{ animationDelay: "0.4s" }}
           >
             <Link
