@@ -16,10 +16,10 @@ export default function BookPage() {
         <div className="mx-auto w-full max-w-sm md:sticky md:top-28">
           <div className="border border-[#b8862f]/30 bg-white p-3">
             <Image
-              src="https://g.tlcdn.com/gen/81291e0fd3ef4f1793858bfcc6b8cb17.png"
+              src="https://g.tlcdn.com/gen/f6732b271108431ea335ebc845f110ca.png"
               alt="ROLL CALL! book cover"
-              width={800}
-              height={1200}
+              width={1536}
+              height={2048}
               className="w-full"
             />
           </div>
