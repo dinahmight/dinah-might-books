@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MinistryPage() {
   return (
     <main className="grain">
-      {/* Hero — kept as a dark, image-driven band for legibility over the photo */}
+      {/* Hero — full-quality image, lighter overlay for readability */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -12,7 +12,7 @@ export default function MinistryPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[#0b1220]/70" />
+          <div className="absolute inset-0 bg-[#0b1220]/40" />
         </div>
         <div className="relative mx-auto max-w-4xl px-6 py-32 text-center">
           <Image
@@ -22,10 +22,10 @@ export default function MinistryPage() {
             height={110}
             className="mx-auto rounded-full bg-[#f4ecd8] p-2"
           />
-          <h1 className="mt-8 font-display text-5xl text-[#f4ecd8]">
+          <h1 className="mt-8 font-display text-5xl text-[#f4ecd8] [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]">
             I Know A Guy Ministries, Inc.
           </h1>
-          <p className="mt-3 font-body text-sm uppercase tracking-[0.3em] text-[#d4af5a]">
+          <p className="mt-3 font-body text-sm uppercase tracking-[0.3em] text-[#d4af5a] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
             Faith &middot; Community &middot; Service
           </p>
         </div>

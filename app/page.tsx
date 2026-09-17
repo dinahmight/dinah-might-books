@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Heart, Users } from "lucide-react";
 export default function HomePage() {
   return (
     <main className="grain">
-      {/* Hero — kept as a dark, image-driven band for legibility over the artwork */}
+      {/* Hero — full-quality image, lighter overlay for readability without washing it out */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -13,9 +13,9 @@ export default function HomePage() {
             alt="Golden scroll of light bearing the names of God"
             fill
             priority
-            className="object-cover opacity-80"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/70 to-[#0b1220]/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220]/60 via-[#0b1220]/30 to-transparent" />
         </div>
         <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-6 py-24">
           <p className="animate-fade-up font-body text-sm uppercase tracking-[0.3em] text-[#d4af5a]">
@@ -28,13 +28,13 @@ export default function HomePage() {
             ROLL CALL<span className="text-[#d4af5a]">!</span>
           </h1>
           <p
-            className="animate-fade-up mt-4 max-w-xl font-display text-2xl italic text-[#f4ecd8]/80"
+            className="animate-fade-up mt-4 max-w-xl font-display text-2xl italic text-[#f4ecd8]/90"
             style={{ animationDelay: "0.2s" }}
           >
             A 31-Day Gratitude Journey Through the Names of God
           </p>
           <p
-            className="animate-fade-up mt-6 max-w-lg font-body text-base leading-relaxed text-[#f4ecd8]/60"
+            className="animate-fade-up mt-6 max-w-lg font-body text-base leading-relaxed text-[#f4ecd8]/75"
             style={{ animationDelay: "0.3s" }}
           >
             There is a difference between knowing facts about God and truly
@@ -53,7 +53,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 border border-[#f4ecd8]/30 px-8 py-4 font-body text-sm uppercase tracking-[0.15em] text-[#f4ecd8] transition-colors hover:border-[#d4af5a] hover:text-[#d4af5a]"
+              className="inline-flex items-center gap-2 border border-[#f4ecd8]/40 px-8 py-4 font-body text-sm uppercase tracking-[0.15em] text-[#f4ecd8] transition-colors hover:border-[#d4af5a] hover:text-[#d4af5a]"
             >
               Explore the Book
             </Link>
@@ -122,7 +122,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mission strip — kept as a dark, image-driven band for legibility over the photo */}
+      {/* Mission strip — full-quality image, lighter overlay */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -131,7 +131,7 @@ export default function HomePage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220]/60 via-[#0b1220]/25 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 py-28">
           <div className="max-w-lg">
@@ -141,7 +141,7 @@ export default function HomePage() {
             <h2 className="mt-4 font-display text-4xl text-[#f4ecd8]">
               Every book purchased fuels real restoration.
             </h2>
-            <p className="mt-5 font-body text-sm leading-relaxed text-[#f4ecd8]/70">
+            <p className="mt-5 font-body text-sm leading-relaxed text-[#f4ecd8]/80">
               All proceeds support I Know A Guy Ministries, Inc. &mdash; a
               faith-based nonprofit walking people from &ldquo;who I
               was&rdquo; into who God says they are, through faith,
